@@ -70,7 +70,7 @@ def linearForward(input, p):
     :param p: parameter matrix (alpha/beta) WITH bias parameter added
     :return: output vector
     """
-    return np.dot(p,input)
+    return np.dot(p, input)
 
 
 def sigmoidForward(a):
@@ -84,9 +84,8 @@ def softmaxForward(b):
     """
     :param b: input vector WITH bias feature added
     """
-    numerator=np.exp(b)
-    denominator=np.sum(np.exp(b))
-    return numerator/denominator
+    softmax = np.exp(b) / np.sum(np.exp(b))
+    return softmax
 
 
 def crossEntropyForward(hot_y, y_hat):
